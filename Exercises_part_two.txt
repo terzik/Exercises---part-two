@@ -78,6 +78,46 @@ namespace Number_Two___All_in_one
             Console.WriteLine("9 - Елочки");
         }
 
+        private static void Exercise4()
+        {
+            Console.Clear();
+            Console.Title = "Exercise number Two - All in one";
+
+            Console.WriteLine("Enter an array size:");
+            int n = int.Parse(Console.ReadLine());
+            int[] num = new int[n];
+            Random rand = new Random();
+
+            Console.Clear();
+
+            for (int i = 0; i < num.Length; i++)
+            {
+                num[i] = rand.Next(2, 100);
+                Console.WriteLine($"Element {i}: {num[i]}");
+            }
+
+            int max = num[0];
+            int min = num[0];
+
+            foreach (int i in num)
+            {
+                if (max < i)
+                {
+                    max = i;
+                }
+                else if (min > i)
+                {
+                    min = i;
+                }
+            }
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Min number of this array is {min}");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Max number of this array is {max}");
+            Console.ResetColor();
+        }
+
         private static void Exercise3()
         {
             Console.Clear();
