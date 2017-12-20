@@ -1,0 +1,118 @@
+using System;
+
+
+namespace Number_Two___All_in_one
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {                
+                MainScreen();
+                int n = int.Parse(Console.ReadLine());
+
+                switch (n)
+                {
+                    case 1:
+                        Exercise1for();
+                        break;
+                    case 2:
+                        Exercise1while();
+                        break;
+                    case 3:
+                        Exercise1dowhile();
+                        break;
+                    case 4:
+                        Exercise2();
+                        break;
+                    case 5:
+                        Exercise3();
+                        break;
+                    case 6:
+                        Exercise4();
+                        break;
+                    case 7:
+                        Exercise5();
+                        break;
+                    case 8:
+                        Exercise6();
+                        break;
+                    case 9:
+                        Exercise7();
+                        break;
+                    default:
+                        Console.WriteLine("Please choose a right number");
+                        break;
+                }
+
+                Console.WriteLine();
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                Console.WriteLine("Want to start over?");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Yes - press Enter");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("No - press Esc");
+                Console.ResetColor();
+                ConsoleKeyInfo c = Console.ReadKey();
+                if (c.Key == ConsoleKey.Escape)
+                    break;
+            }          
+        }
+
+        private static void MainScreen()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Please enter a number of task and you will get an answer:");
+            Console.ResetColor();
+            Console.WriteLine("1 - Составьте программу, выводящую на экран квадраты чисел от 10 до 20 включительно (for);");
+            Console.WriteLine("2 - Составьте программу, выводящую на экран квадраты чисел от 10 до 20 включительно (while);");
+            Console.WriteLine("3 - Составьте программу, выводящую на экран квадраты чисел от 10 до 20 включительно (do...while);");
+            Console.WriteLine("4 - Даны натуральные числа от 35 до 87. Вывести на консоль те из них, которые при делении на 7 дают остаток 1, 2 или 5");
+            Console.WriteLine("5 - Найдите сумму  1+2+3+…+n, где число n вводится пользователем с клавиатуры");
+            Console.WriteLine("6 - Найдите произведение цифр трехзначного числа");
+            Console.WriteLine("7 - Дан масив чисел который сгенерирован случайным образом. Найти минимальный и максимальный елементы (сделать это за один проход цикла)");
+            Console.WriteLine("8 - Найдите количество четных цифр данного натурального числа");
+            Console.WriteLine("9 - Елочки");
+        }
+
+        private static void Exercise1dowhile()
+        {
+            Console.Clear();
+            double a = 10;
+
+            do
+            {
+                double Result = Math.Pow(a, 2);
+                Console.WriteLine($"Result of raise in power 2 a number {a} is {Result}");
+                a++;
+            }
+            while (a > 10 && a <= 20);            
+        }
+
+        private static void Exercise1while()
+        {
+            Console.Clear();
+            double a = 10;
+
+            while (a >= 10 && a <= 20)
+            {
+                double Result = Math.Pow(a, 2);
+                Console.WriteLine($"Result of raise in power 2 a number {a} is {Result}");
+                a++;
+            }
+        }
+
+        private static void Exercise1for()
+        {
+            Console.Clear();
+            for (double a = 10; a <= 20; a++)
+            {
+                double Result = Math.Pow(a, 2);
+                Console.WriteLine($"Result of raise in power 2 a number {a} is {Result}");
+            }
+        }
+    }
+}
