@@ -78,6 +78,19 @@ namespace Number_Two___All_in_one
             Console.WriteLine("9 - Елочки");
         }
 
+        private static void Exercise2()
+        {
+            Console.Clear();
+            int a;
+
+            for (a = 35; a <= 87; a++)
+            {
+                int Reminder = a % 7;
+                if (Reminder == 1 || Reminder == 2 || Reminder == 5)
+                    Console.WriteLine(a);
+            }
+        }
+
         private static void Exercise1dowhile()
         {
             Console.Clear();
