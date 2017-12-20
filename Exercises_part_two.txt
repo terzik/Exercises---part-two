@@ -78,6 +78,27 @@ namespace Number_Two___All_in_one
             Console.WriteLine("9 - Елочки");
         }
 
+        private static void Exercise3()
+        {
+            Console.Clear();
+            Console.WriteLine("Please enter a number N and press 'Enter' to continue");
+
+            int Sum = 1;
+            int n = int.Parse(Console.ReadLine());
+
+            Console.Clear();
+
+            for (int a = 1; a < n; a++)
+            {
+                int b = a + 1;
+                Sum += b;
+            }
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"A sum of all numbers till {n} is {Sum}");
+            Console.ResetColor();
+        }
+
         private static void Exercise2()
         {
             Console.Clear();
