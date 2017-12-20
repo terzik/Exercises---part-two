@@ -67,15 +67,15 @@ namespace Number_Two___All_in_one
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Please enter a number of task and you will get an answer:");
             Console.ResetColor();
-            Console.WriteLine("1 - Составьте программу, выводящую на экран квадраты чисел от 10 до 20 включительно (for);");
-            Console.WriteLine("2 - Составьте программу, выводящую на экран квадраты чисел от 10 до 20 включительно (while);");
-            Console.WriteLine("3 - Составьте программу, выводящую на экран квадраты чисел от 10 до 20 включительно (do...while);");
-            Console.WriteLine("4 - Даны натуральные числа от 35 до 87. Вывести на консоль те из них, которые при делении на 7 дают остаток 1, 2 или 5");
-            Console.WriteLine("5 - Найдите сумму  1+2+3+…+n, где число n вводится пользователем с клавиатуры");
-            Console.WriteLine("6 - Найдите произведение цифр трехзначного числа");
-            Console.WriteLine("7 - Дан масив чисел который сгенерирован случайным образом. Найти минимальный и максимальный елементы (сделать это за один проход цикла)");
-            Console.WriteLine("8 - Найдите количество четных цифр данного натурального числа");
-            Console.WriteLine("9 - Елочки");
+            Console.WriteLine("1 - Displays the squares of numbers from 10 to 20 inclusive (variant with for, while, do ... while);");
+            Console.WriteLine("2 - Displays the squares of numbers from 10 to 20 inclusive (variant with while);");
+            Console.WriteLine("3 - Displays the squares of numbers from 10 to 20 inclusive (variant with do ... while);");
+            Console.WriteLine("4 - Given natural numbers from 35 to 87. Output to the console those of them that, when divided by 7, give a remainder of 1, 2 or 5;");
+            Console.WriteLine("5 - Find the sum of 1 + 2 + 3 + ... + n, where the number n is entered by the user from the keyboard;");
+            Console.WriteLine("6 - Find the product of the digits of a three-digit number;");
+            Console.WriteLine("7 - Find the minimum and maximum elements (do this in one pass of the loop) in randomly generated array of numbers;");
+            Console.WriteLine("8 - Find the number of even digits of a given natural number;");
+            Console.WriteLine("9 - Pyramid;");
         }
 
         private static void Exercise4()
