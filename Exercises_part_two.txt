@@ -77,6 +77,17 @@ namespace Number_Two___All_in_one
             Console.WriteLine("8 - Find the number of even digits of a given natural number;");
             Console.WriteLine("9 - Pyramid;");
         }
+ 
+        private static void Exercise5()
+        {
+            Console.Clear();
+            Console.WriteLine("Please enter a number");
+
+            int a = int.Parse(Console.ReadLine());
+            int result;
+
+            Console.WriteLine($"Answer is {result = ((a / 100 % 10) * (a / 10 % 10) * (a % 10))}");
+        }
 
         private static void Exercise4()
         {
