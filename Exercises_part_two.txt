@@ -78,6 +78,24 @@ namespace Number_Two___All_in_one
             Console.WriteLine("9 - Pyramid;");
         }
  
+        private static void Exercise6()
+        {
+            Console.Clear();
+            int n;
+            int result = 0;
+
+            Console.WriteLine("Please enter a natural number");
+            n = int.Parse(Console.ReadLine());
+
+            while (n != 0)
+            {
+                if (n % 10 % 2 == 0)
+                    result++;
+                n /= 10;
+            }
+            Console.WriteLine($"A count of numbers is: {result}");
+        }
+
         private static void Exercise5()
         {
             Console.Clear();
