@@ -1,0 +1,249 @@
+﻿using System;
+
+
+namespace Number_Two___All_in_one
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {                
+                MainScreen();
+                int n = int.Parse(Console.ReadLine());
+
+                switch (n)
+                {
+                    case 1:
+                        Exercise1for();
+                        break;
+                    case 2:
+                        Exercise1while();
+                        break;
+                    case 3:
+                        Exercise1dowhile();
+                        break;
+                    case 4:
+                        Exercise2();
+                        break;
+                    case 5:
+                        Exercise3();
+                        break;
+                    case 6:
+                        Exercise4();
+                        break;
+                    case 7:
+                        Exercise5();
+                        break;
+                    case 8:
+                        Exercise6();
+                        break;
+                    case 9:
+                        Exercise7();
+                        break;
+                    default:
+                        Console.WriteLine("Please choose a right number");
+                        break;
+                }
+
+                Console.WriteLine();
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                Console.WriteLine("Want to start over?");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Yes - press Enter");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("No - press Esc");
+                Console.ResetColor();
+                ConsoleKeyInfo c = Console.ReadKey();
+                if (c.Key == ConsoleKey.Escape)
+                    break;
+            }          
+        }
+
+        private static void MainScreen()
+        {
+            Console.SetBufferSize(100, 100);
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Please enter a number of task and you will get an answer:");
+            Console.ResetColor();
+            Console.WriteLine("1 - Displays the squares of numbers from 10 to 20 inclusive (variant with for, while, do ... while);");
+            Console.WriteLine("2 - Displays the squares of numbers from 10 to 20 inclusive (variant with while);");
+            Console.WriteLine("3 - Displays the squares of numbers from 10 to 20 inclusive (variant with do ... while);");
+            Console.WriteLine("4 - Given natural numbers from 35 to 87. Output to the console those of them that, when divided by 7, give a remainder of 1, 2 or 5;");
+            Console.WriteLine("5 - Find the sum of 1 + 2 + 3 + ... + n, where the number n is entered by the user from the keyboard;");
+            Console.WriteLine("6 - Find the product of the digits of a three-digit number;");
+            Console.WriteLine("7 - Find the minimum and maximum elements (do this in one pass of the loop) in randomly generated array of numbers;");
+            Console.WriteLine("8 - Find the number of even digits of a given natural number;");
+            Console.WriteLine("9 - Pyramid;");
+        }
+
+        private static void Exercise7()
+        {
+            Console.Clear();
+            Console.WriteLine("Please enter a number (this number will be a bottom's size of pyramid):");
+            int a = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < a; i++)
+            {
+                for (int j = 0; j < i + 1; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+
+            for (int i = a; i > 0; i--)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        private static void Exercise6()
+        {
+            Console.Clear();
+            int n;
+            int result = 0;
+
+            Console.WriteLine("Please enter a natural number");
+            n = int.Parse(Console.ReadLine());
+
+            while (n != 0)
+            {
+                if (n % 10 % 2 == 0)
+                    result++;
+                n /= 10;
+            }
+            Console.WriteLine($"A count of numbers is: {result}");
+        }
+
+        private static void Exercise5()
+        {
+            Console.Clear();
+            Console.WriteLine("Please enter a number");
+
+            int a = int.Parse(Console.ReadLine());
+            int result;
+
+            Console.WriteLine($"Answer is {result = ((a / 100 % 10) * (a / 10 % 10) * (a % 10))}");
+        }
+      
+        private static void Exercise4()
+        {
+            Console.Clear();
+            Console.Title = "Exercise number Two - All in one";
+
+            Console.WriteLine("Enter an array size:");
+            int n = int.Parse(Console.ReadLine());
+            int[] num = new int[n];
+            Random rand = new Random();
+
+            Console.Clear();
+
+            for (int i = 0; i < num.Length; i++)
+            {
+                num[i] = rand.Next(2, 100);
+                Console.WriteLine($"Element {i}: {num[i]}");
+            }
+
+            int max = num[0];
+            int min = num[0];
+
+            foreach (int i in num)
+            {
+                if (max < i)
+                {
+                    max = i;
+                }
+                else if (min > i)
+                {
+                    min = i;
+                }
+            }
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Min number of this array is {min}");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Max number of this array is {max}");
+            Console.ResetColor();
+        }
+
+        private static void Exercise3()
+        {
+            Console.Clear();
+            Console.WriteLine("Please enter a number N and press 'Enter' to continue");
+
+            int Sum = 1;
+            int n = int.Parse(Console.ReadLine());
+
+            Console.Clear();
+
+            for (int a = 1; a < n; a++)
+            {
+                int b = a + 1;
+                Sum += b;
+            }
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"A sum of all numbers till {n} is {Sum}");
+            Console.ResetColor();
+        }
+
+        private static void Exercise2()
+        {
+            Console.Clear();
+            int a;
+
+            for (a = 35; a <= 87; a++)
+            {
+                int Reminder = a % 7;
+                if (Reminder == 1 || Reminder == 2 || Reminder == 5)
+                    Console.WriteLine(a);
+            }
+        }
+
+        private static void Exercise1dowhile()
+        {
+            Console.Clear();
+            double a = 10;
+
+            do
+            {
+                double Result = Math.Pow(a, 2);
+                Console.WriteLine($"Result of raise in power 2 a number {a} is {Result}");
+                a++;
+            }
+            while (a > 10 && a <= 20);            
+        }
+
+        private static void Exercise1while()
+        {
+            Console.Clear();
+            double a = 10;
+
+            while (a >= 10 && a <= 20)
+            {
+                double Result = Math.Pow(a, 2);
+                Console.WriteLine($"Result of raise in power 2 a number {a} is {Result}");
+                a++;
+            }
+        }
+
+        private static void Exercise1for()
+        {
+            Console.Clear();
+            for (double a = 10; a <= 20; a++)
+            {
+                double Result = Math.Pow(a, 2);
+                Console.WriteLine($"Result of raise in power 2 a number {a} is {Result}");
+            }
+        }
+    }
+}
